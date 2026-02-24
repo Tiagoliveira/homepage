@@ -287,6 +287,9 @@ export function cleanServiceGroups(groups) {
           // crowdsec
           limit24h,
 
+          // amp
+          instance,
+
           // customapi
           mappings,
           display,
@@ -333,7 +336,7 @@ export function cleanServiceGroups(groups) {
           pointsLimit,
           diskUnits,
 
-          // glances, customapi, iframe, prometheusmetric
+          // amp, glances, customapi, iframe, prometheusmetric
           refreshInterval,
 
           // hdhomerun
@@ -616,6 +619,10 @@ export function cleanServiceGroups(groups) {
         if (type === "customapi") {
           if (mappings) widget.mappings = mappings;
           if (display) widget.display = display;
+          if (refreshInterval) widget.refreshInterval = refreshInterval;
+        }
+        if (type === "amp") {
+          if (instance !== undefined) widget.instance = instance;
           if (refreshInterval) widget.refreshInterval = refreshInterval;
         }
         if (type === "calendar") {

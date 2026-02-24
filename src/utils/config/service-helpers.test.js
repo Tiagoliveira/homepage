@@ -297,6 +297,7 @@ describe("utils/config/service-helpers", () => {
               { type: "mjpeg", stream: "s", fit: "contain" },
               { type: "openmediavault", method: "foo.bar" },
               { type: "customapi", mappings: { x: 1 }, display: { y: 2 }, refreshInterval: 5000 },
+              { type: "amp", instance: "5bb79473", refreshInterval: 60000 },
               {
                 type: "calendar",
                 integrations: [],
@@ -349,6 +350,9 @@ describe("utils/config/service-helpers", () => {
     );
     expect(widgets.find((w) => w.type === "komodo")).toEqual(
       expect.objectContaining({ showSummary: true, showStacks: false }),
+    );
+    expect(widgets.find((w) => w.type === "amp")).toEqual(
+      expect.objectContaining({ instance: "5bb79473", refreshInterval: 60000 }),
     );
     expect(widgets.find((w) => w.type === "kubernetes")).toEqual(
       expect.objectContaining({ namespace: "default", app: "app", podSelector: "app=test" }),

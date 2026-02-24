@@ -315,6 +315,15 @@
         "filtered": "Filtered",
         "latency": "Latency"
     },
+    "amp": {
+        "running": "Running",
+        "total": "Total",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "state": "State",
+        "players": "Players",
+        "maxPlayers": "Max"
+    },
     "speedtest": {
         "upload": "Upload",
         "download": "Download",
